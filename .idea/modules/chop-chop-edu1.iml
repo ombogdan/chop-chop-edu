@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="RailsFacetType" name="Ruby on Rails">
+      <configuration>
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_SUPPORT_REMOVED" VALUE="false" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_TESTS_SOURCES_PATCHED" VALUE="true" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$/../../chop-chop-edu" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../../chop-chop-edu">
+      <sourceFolder url="file://$MODULE_DIR$/../../chop-chop-edu/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../chop-chop-edu/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../chop-chop-edu/features" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../chop-chop-edu/.bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../chop-chop-edu/components" />
+      <excludeFolder url="file://$MODULE_DIR$/../../chop-chop-edu/log" />
+      <excludeFolder url="file://$MODULE_DIR$/../../chop-chop-edu/public/packs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../chop-chop-edu/public/system" />
+      <excludeFolder url="file://$MODULE_DIR$/../../chop-chop-edu/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/../../chop-chop-edu/vendor/bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../chop-chop-edu/vendor/cache" />
+    </content>
+    <orderEntry type="jdk" jdkName="ruby-2.5.5-p157" jdkType="RUBY_SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="RubyModuleProperties">
+    <option name="autoCreated" value="true" />
+  </component>
+</module>
