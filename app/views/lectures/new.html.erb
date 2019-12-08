@@ -1,0 +1,28 @@
+<h1>New</h1>
+
+<%=  form_for @lecture, url: lectures_path do |form|  %>
+
+    <p>
+    <%= form.label :"Thema" %><br>
+    <%= form.text_field :theme_name %>
+  </p>
+
+  <p>
+    <%= form.label :"Id subject theme" %><br>
+    <%= form.number_field :id_subject_theme %>
+  </p>
+
+  <p>
+    <%= form.label :"Text" %><br>
+    <%= form.text_area :text %>
+  </p>
+
+  <p>
+    <%= form.label :"Id test" %><br>
+    <%= form.number_field :id_test %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
