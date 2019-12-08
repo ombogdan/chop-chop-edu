@@ -1,0 +1,10 @@
+<%=  form_for @courses, url: {action: "update"} do |form|  %>
+  <p>
+    <%= form.label :"Назва предмету" %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
