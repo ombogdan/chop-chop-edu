@@ -1,0 +1,11 @@
+<h1>Courses</h1>
+<table class="table">
+  <% @courses.each do |course| %>
+    <%= course.name %>
+    <%= link_to 'Show', course_path(course) %>
+    <%= link_to 'Edit', edit_course_path(course) %>
+    <%= link_to 'Delete', course_path(course), method: :delete, data: {confirm: "Delete?"} %>
+  <% end %>
+  <br/>
+  <a href="courses/new">NEW courses</a>
+</table>
