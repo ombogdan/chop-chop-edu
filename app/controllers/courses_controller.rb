@@ -51,8 +51,6 @@ class CoursesController < ApplicationController
     params[:course].permit(:name)
   end
 
-  def find_course
-    @courses = Course.find(params[:id])
-
+  def homepage
   end
 end
