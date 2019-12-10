@@ -1,0 +1,2 @@
+class SubjectTheme < ApplicationRecord
+end
