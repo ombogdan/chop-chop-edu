@@ -50,9 +50,4 @@ class CoursesController < ApplicationController
   def course_param
     params[:course].permit(:name)
   end
-
-  def find_course
-    @courses = Course.find(params[:id])
-
-  end
 end
