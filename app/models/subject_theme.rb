@@ -1,3 +1,3 @@
 class SubjectTheme < ApplicationRecord
-  belongs_to :lecture
+  has_one :course
 end

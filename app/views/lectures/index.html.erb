@@ -3,9 +3,9 @@
 <table class="table">
   <% @lectures.each do |lecture| %>
     <%= lecture.theme_name %>
-    <%= lecture.id_subject_theme %>
+    <%= lecture.subject_theme_id %>
     <%= lecture.text %>
-    <%= lecture.id_test %>
+    <%= lecture.test_id %>
     <%= link_to 'Show', lecture_path(lecture) %>
     <%= link_to 'Edit', edit_lecture_path(lecture) %>
     <%= link_to 'Delete', lecture_path(lecture), method: :delete, data: {confirm: "Delete?"} %>
