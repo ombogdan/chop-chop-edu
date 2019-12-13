@@ -39,7 +39,7 @@ class LabsController < ApplicationController
       if @lab.destroy
         redirect_to labs_path
       else
-        redirect_to labss_path, error: "This lab not delete"
+        redirect_to labs_path, error: "This lab not delete"
       end
     end
 
