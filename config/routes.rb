@@ -27,5 +27,8 @@ Rails.application.routes.draw do
   resources :practices, path: '/chop-chop-edu/practice'
 
 
+  resources :themes, path: '/chop-chop-edu/themes'
+
+
 end
 

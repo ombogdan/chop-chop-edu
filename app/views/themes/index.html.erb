@@ -1,0 +1,13 @@
+<h1>index</h1>
+<h1>Lectures</h1>
+<table class="table">
+  <% @themes.each do |theme| %>
+    <%= theme.theme_name %>
+    <%= theme.course_id %>
+    <%= link_to 'Show', theme_path(theme) %>
+    <%= link_to 'Edit', edit_theme_path(theme) %>
+    <%= link_to 'Delete', theme_path(theme), method: :delete, data: {confirm: "Delete?"} %>
+  <% end %>
+  <br/>
+  <a href="themes/new">NEW THEMES</a>
+</table>
