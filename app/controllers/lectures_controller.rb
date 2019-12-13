@@ -6,7 +6,7 @@ class LecturesController < ApplicationController
   def create
     @lecture = Lecture.new(lecture_params)
     if @lecture.save
-      redirect_to "/lectures"
+      redirect_to lectures_path
     else
       render :new
     end

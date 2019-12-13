@@ -1,11 +1,12 @@
+<%= link_to 'Home', "../home" %>
 <h1>index</h1>
 <h1>Lectures</h1>
 <table class="table">
   <% @lectures.each do |lecture| %>
-    <%= lecture.theme_name %>
-    <%= lecture.id_subject_theme %>
-    <%= lecture.text %>
-    <%= lecture.id_test %>
+    <h2><%= lecture.theme_name %></h2>
+    <%= lecture.subject_theme_id %>
+    <p><%= lecture.text %></p>
+    <%= lecture.test_id %>
     <%= link_to 'Show', lecture_path(lecture) %>
     <%= link_to 'Edit', edit_lecture_path(lecture) %>
     <%= link_to 'Delete', lecture_path(lecture), method: :delete, data: {confirm: "Delete?"} %>
