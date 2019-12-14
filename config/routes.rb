@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get '/home', to: 'courses#homepage'
 
   resources :courses, path: '/chop-chop-edu/courses'
   get '/chop-chop-edu/courses-for-group', to: 'courses#forgroup'
