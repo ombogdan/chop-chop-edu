@@ -1,7 +1,6 @@
-<h1>Courses</h1>
-<table class="table">
-  <%= @courses.theme_name %>
-  <%= link_to 'Show All', courses_path %>
-  <%= link_to 'Edit', edit_course_path(@courses) %>
+  <h2 class="text-center mt-5"><%= @courses.name %></h2>
 
-</table>
+<div class="text-center mt-5">
+  <%= link_to 'Show All', courses_path, :class => 'btn btn-success'  %>
+  <%= link_to 'Edit', edit_course_path(@courses), :class => 'btn btn-warning'%>
+</div>

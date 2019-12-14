@@ -1,0 +1,14 @@
+<h1>index</h1>
+<h1>PRACTICES</h1>
+<table class="table">
+  <% @practices.each do |practice| %>
+    <%= practice.theme_name %>
+    <%= practice.subject_theme_id %>
+    <%= practice.text %>
+    <%= link_to 'Show', practice_path(practice) %>
+    <%= link_to 'Edit', edit_practice_path(practice) %>
+    <%= link_to 'Delete', practice_path(practice), method: :delete, data: {confirm: "Delete?"} %>
+  <% end %>
+  <br/>
+  <a href="practice/new">NEW practices</a>
+</table>

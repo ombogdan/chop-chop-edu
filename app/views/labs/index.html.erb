@@ -1,0 +1,15 @@
+<h1>index</h1>
+<h1>Lectures</h1>
+<table class="table">
+  <% @labs.each do |lab| %>
+    <%= lab.theme_name %>
+    <%= lab.subject_theme_id %>
+    <%= lab.goal %>
+    <%= lab.text %>
+    <%= link_to 'Show', labs_path(lab) %>
+    <%= link_to 'Edit', edit_lab_path(lab) %>
+    <%= link_to 'Delete', lab_path(lab), method: :delete, data: {confirm: "Delete?"} %>
+  <% end %>
+  <br/>
+  <a href="labs/new">NEW labs</a>
+</table>

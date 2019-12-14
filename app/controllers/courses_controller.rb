@@ -1,5 +1,4 @@
 class CoursesController < ApplicationController
-  #before_filter :find_course, only: [:edit, :update, :show]
 
   def new
     @courses = Course.new
@@ -51,6 +50,4 @@ class CoursesController < ApplicationController
     params[:course].permit(:name)
   end
 
-  def homepage
-  end
 end

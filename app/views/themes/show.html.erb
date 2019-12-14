@@ -1,7 +1,7 @@
 <h1>Show</h1>
 <%= @lecture.theme_name %>
-<%= @lecture.subject_theme_id %>
+<%= @lecture.id_subject_theme %>
 <%= @lecture.text %>
-<%= @lecture.test_id %>
+<%= @lecture.id_test %>
 <%= link_to 'Show All', lectures_path %>
 <%= link_to 'Edit', edit_lecture_path(@lecture) %>
