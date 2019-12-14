@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  devise_for :students
+  devise_for :users
+
+  get 'home/index'
+
+  root 'home#index'
+
+  get '/chop-chop-edu', to: 'courses#homepage'
 
   resources :courses, path: '/chop-chop-edu/courses'
   get '/chop-chop-edu/courses-for-group', to: 'courses#forgroup'
