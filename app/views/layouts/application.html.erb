@@ -7,10 +7,18 @@
 
     <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <nav class="navbar navbar-dark bg-dark">
+    <%= link_to 'Предмети', courses_path %>
+    <%= link_to 'Лекції', lectures_path %>
+    <%= link_to 'Лаботаторні роботи', labs_path %>
+    <%= link_to 'Практики', practices_path %>
+    <%= link_to 'Теми для предметів', themes_path %>
+  </nav>
     <%= yield %>
   </body>
 </html>

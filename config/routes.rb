@@ -20,5 +20,15 @@ Rails.application.routes.draw do
   get '/chop-chop-edu/teachers', to: 'teachers#all'
   get '/chop-chop-edu/teachers-for-courses', to: 'teachers#forcourses'
 
+
+  resources :labs, path: '/chop-chop-edu/labs'
+
+
+  resources :practices, path: '/chop-chop-edu/practice'
+
+
+  resources :themes, path: '/chop-chop-edu/themes'
+
+
 end
 
