@@ -1,6 +1,6 @@
 <h1>New</h1>
 
-<%=  form_for @lecture, url: {action: "update"} do |form|  %>
+<%=  form_for @lab, url: {action: "update"} do |form|  %>
 
   <p>
     <%= form.label :"Thema" %><br>
@@ -13,13 +13,13 @@
   </p>
 
   <p>
-    <%= form.label :"Text" %><br>
-    <%= form.text_area :text %>
+    <%= form.label :"Id test" %><br>
+    <%= form.number_field :goal %>
   </p>
 
   <p>
-    <%= form.label :"Id test" %><br>
-    <%= form.number_field :test_id %>
+    <%= form.label :"Text" %><br>
+    <%= form.text_area :text %>
   </p>
 
   <p>

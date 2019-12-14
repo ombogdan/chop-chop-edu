@@ -1,0 +1,17 @@
+<h1>Edit Theme</h1>
+  <%=  form_for @theme, url: {action: "update"} do |form|  %>
+
+    <p>
+      <%= form.label :"Thema" %><br>
+      <%= form.text_field :theme_name %>
+    </p>
+
+    <p>
+      <%= form.label :"Id subject theme" %><br>
+      <%= form.number_field :course_id %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
