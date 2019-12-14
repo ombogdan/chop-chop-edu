@@ -37,9 +37,9 @@ class PracticesController < ApplicationController
     def destroy
       @practice = Practice.find(params[:id])
       if @practice.destroy
-        redirect_to practice_path
+        redirect_to practices_path
       else
-        redirect_to practice_path, error: "This lab not delete"
+        redirect_to practices_path, error: "This lab not delete"
       end
     end
 

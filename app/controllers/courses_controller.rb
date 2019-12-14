@@ -49,7 +49,5 @@ class CoursesController < ApplicationController
   def course_param
     params[:course].permit(:name)
   end
-  
-  def homepage
-  end
+
 end

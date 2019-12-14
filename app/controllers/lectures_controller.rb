@@ -37,7 +37,7 @@ class LecturesController < ApplicationController
   def destroy
     @lecture = Lecture.find(params[:id])
     if @lecture.destroy
-      redirect_to lecture_path
+      redirect_to lectures_path
     else
       redirect_to lecture_path, error: "This course not delete"
     end
