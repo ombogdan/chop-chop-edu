@@ -1,6 +1,6 @@
 <h1 class="text-center mb-4 pt-2">Створити нову практику</h1>
 
-<%= form_for @practice, url: practices_path do |form| %>
+<%= form_for @practice, url:  {action: "update"} do |form| %>
 
   <div class="container">
     <div class="form-group">

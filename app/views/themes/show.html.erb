@@ -1,7 +1,15 @@
-<h1>Show</h1>
-<%= @lecture.theme_name %>
-<%= @lecture.id_subject_theme %>
-<%= @lecture.text %>
-<%= @lecture.id_test %>
-<%= link_to 'Show All', lectures_path %>
-<%= link_to 'Edit', edit_lecture_path(@lecture) %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1><%= @themes.theme_name %></h1>
+    </div>
+    <div class="col-sm mt-2">
+      <%= link_to 'Показати всі лекції', themes_path, :class => 'btn btn-success' %>
+    </div>
+
+    <div class="col-sm mt-2">
+      <%= link_to 'Редагувати', edit_theme_path(@themes), :class => 'btn btn-warning' %>
+    </div>
+<%= @themes.course_id %>
+</div>
+</div>
