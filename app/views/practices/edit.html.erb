@@ -1,24 +1,26 @@
-<h1>New</h1>
+<h1 class="text-center mb-4 pt-2">Створити нову практику</h1>
 
-<%=  form_for @practice, url: {action: "update"} do |form|  %>
+<%= form_for @practice, url: practices_path do |form| %>
 
-  <p>
-    <%= form.label :"Thema" %><br>
-    <%= form.text_field :theme_name %>
-  </p>
-
-  <p>
-    <%= form.label :"Id subject theme" %><br>
-    <%= form.number_field :subject_theme_id %>
-  </p>
-
-  <p>
-    <%= form.label :"Text" %><br>
-    <%= form.text_area :text %>
-  </p>
+  <div class="container">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Тема лекції</label>
+      <%= form.text_field :theme_name %>
+      <small id="emailHelp" class="form-text text-muted">Введіть повну тему лабораторної роботи</small>
+    </div>
 
 
-  <p>
-    <%= form.submit %>
-  </p>
+    <div class="form-group">
+      <label for="exampleInputEmail1">ID предмету</label>
+      <%= form.number_field :subject_theme_id %>
+      <small id="emailHelp" class="form-text text-muted">Введіть ІD предмету</small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Лекція</label>
+      <%= form.text_area :text, :rows => '10', :class => 'form-control' %>
+    </div>
+
+    <%= form.submit :class => 'btn btn-success', :value => 'Редагувати лабораторну роботу' %>
+  </div>
 <% end %>

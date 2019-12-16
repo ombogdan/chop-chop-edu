@@ -1,14 +1,30 @@
-<h1>index</h1>
-<h1>PRACTICES</h1>
-<table class="table">
-  <% @practices.each do |practice| %>
-    <%= practice.theme_name %>
-    <%= practice.subject_theme_id %>
-    <%= practice.text %>
-    <%= link_to 'Show', practice_path(practice) %>
-    <%= link_to 'Edit', edit_practice_path(practice) %>
-    <%= link_to 'Delete', practice_path(practice), method: :delete, data: {confirm: "Delete?"} %>
-  <% end %>
-  <br/>
-  <a href="practice/new">NEW practices</a>
-</table>
+<h1 class="text-center mb-4 pt-2">PRACTICES</h1>
+<a class="btn btn-primary row ml-5 mb-3" href="practice/new" role="button">Додати нову практику</a>
+
+<% @practices.each do |practice| %>
+  <div class="container">
+    <div class="row">
+      <%= practice.subject_theme_id %>
+
+      <div class="col-sm-7 mt-3">
+        <h2><%= practice.theme_name %></h2>
+      </div>
+
+
+      <div class="col-sm pb-3">
+        <%= link_to 'Показати', practice_path(practice), :class => 'btn btn-success' %>
+      </div>
+
+      <div class="col-sm-2">
+        <%= link_to 'Редагувати', edit_practice_path(practice), :class => 'btn btn-warning' %>
+      </div>
+
+      <div class="col-sm-1">
+        <%= link_to 'Delete', practice_path(practice), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
+      </div>
+
+      <%= practice.text%>
+
+    </div>
+  </div>
+<% end %>
