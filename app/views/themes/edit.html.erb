@@ -1,17 +1,18 @@
-<h1>Edit Theme</h1>
-  <%=  form_for @theme, url: {action: "update"} do |form|  %>
-
-    <p>
-      <%= form.label :"Thema" %><br>
+<h1 class="text-center mb-4 pt-2">Змінити тему</h1>
+<%=  form_for @theme, url:  {action: "update"} do |form|  %>
+  <div class="container">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Тема лекції</label>
       <%= form.text_field :theme_name %>
-    </p>
+      <small id="emailHelp" class="form-text text-muted">Введіть повну тему лабораторної роботи</small>
+    </div>
 
-    <p>
-      <%= form.label :"Id subject theme" %><br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">ID предмету</label>
       <%= form.number_field :course_id %>
-    </p>
+      <small id="emailHelp" class="form-text text-muted">Введіть ІD предмету</small>
+    </div>
 
-    <p>
-      <%= form.submit %>
-    </p>
-  <% end %>
+    <%= form.submit :class => 'btn btn-success', :value => 'Змінити тему' %>
+  </div>
+<% end %>

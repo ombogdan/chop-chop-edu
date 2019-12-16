@@ -1,13 +1,25 @@
-<h1>index</h1>
-<h1>Lectures</h1>
-<table class="table">
-  <% @themes.each do |theme| %>
-    <%= theme.theme_name %>
-    <%= theme.course_id %>
-    <%= link_to 'Show', theme_path(theme) %>
-    <%= link_to 'Edit', edit_theme_path(theme) %>
-    <%= link_to 'Delete', theme_path(theme), method: :delete, data: {confirm: "Delete?"} %>
-  <% end %>
-  <br/>
-  <a href="themes/new">NEW THEMES</a>
-</table>
+<h1 class="text-center mb-4 pt-2">Лекції</h1>
+<a class="btn btn-primary row ml-5" href="themes/new/" role="button">Додати нову тему</a>
+<% @themes.each do |theme| %>
+  <div class="container">
+    <div class="row">
+      <h2><%= theme.course_id %></h2>
+
+      <div class="col-sm-7">
+        <h2> <%= theme.theme_name %></h2>
+      </div>
+
+      <div class="col-sm pb-3">
+        <%= link_to 'Показати', theme_path(theme), :class => 'btn btn-success' %>
+      </div>
+
+      <div class="col-sm-2">
+        <%= link_to 'Редагувати', edit_theme_path(theme), :class => 'btn btn-warning' %>
+      </div>
+
+      <div class="col-sm-1">
+        <%= link_to 'Видалити', theme_path(theme), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
+      </div>
+    </div>
+  </div>
+<% end %>
