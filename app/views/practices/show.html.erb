@@ -1,6 +1,18 @@
-<h1>Show</h1>
-<%= @practice.theme_name %>
-<%= @practice.subject_theme_id %>
-<%= @practice.text %>
-<%= link_to 'Show All', practices_path %>
-<%= link_to 'Edit', edit_practice_path(@practice) %>
+<div class="container">
+  <div class="row">
+    <h1 class="text-center"><%= @practice.theme_name %></h1>
+    <div class="col-sm">
+      <%= @practice.subject_theme_id %>
+    </div>
+    <div class="col-sm mt-2">
+      <%= link_to 'Показати всі лекції', practices_path, :class => 'btn btn-success' %>
+    </div>
+
+    <div class="col-sm mt-2">
+      <%= link_to 'Редагувати', edit_practice_path(@practice), :class => 'btn btn-warning' %>
+    </div>
+  </div>
+<div class="mt-4">
+  <%= @practice.text %>
+</div>
+</div>
