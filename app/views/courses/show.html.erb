@@ -1,19 +1,33 @@
 <div class="container">
   <div class="row">
-    <h2 class="text-center mt-5"><%= @course_name.name %></h2>
-    <div class="text-center mt-5">
-      <%= link_to 'Show All', courses_path, :class => 'btn btn-success' %>
-      <%= link_to 'Edit', edit_course_path(@course_name), :class => 'btn btn-warning' %>
+    <div class="col-sm-9">
+      <h2 class="text-center mt-5"><%= @course_name.name %></h2>
     </div>
+
+    <div class="col-sm pt-5">
+      <%= link_to 'Змінити назву предмету', edit_course_path(@course_name), :class => 'btn btn-warning' %>
+    </div>
+
+
   </div>
 </div>
-<a class="btn btn-primary row ml-5" href="../themes/new/" role="button">Додати нову тему</a>
-
+<div class="container mt-3">
+  <div class="row">
+    <a class="btn btn-outline-success col-sm mr-2" href="../themes/new/" role="button">Додати нову тему</a>
+    <a class="btn btn-outline-primary col-sm mr-2" href="../lectures/new/" role="button">Додати нову лекцію</a>
+    <a class="btn btn-outline-success col-sm mr-2" href="../labs/new/" role="button">Додати нову лабораторну</a>
+    <a class="btn btn-outline-info col-sm " href="../practice/new" role="button">Додати нову практику</a>
+  </div>
+</div>
 <% @themes.each do |theme| %>
   <h1><%= theme.theme_name %></h1>
+  <%= link_to 'Delete', theme_path(theme), method: :get, :class => 'btn btn-danger' %>
+
 <% end %>
 
-<div class="text-center mt-5">
-  <%= link_to 'Show All', courses_path, :class => 'btn btn-success' %>
-  <%= link_to 'Edit', edit_course_path(@course_name), :class => 'btn btn-warning' %>
-</div>
+
+
+
+
+
+

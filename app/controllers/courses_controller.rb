@@ -25,7 +25,14 @@ class CoursesController < ApplicationController
     @course_name = Course.find(params[:id])
     course = Course.find(params[:id])
     @themes = course.subject_themes
+  end
 
+  def show_them
+    @themes = SubjectTheme.find(params[:id])
+    theme = SubjectTheme.find(params[:id])
+    @lectures = Lecture.where(subject_theme_id: theme)
+    @practices = Practice.where(subject_theme_id: theme)
+    @labs = Lab.where(subject_theme_id: theme)
   end
 
   def update
