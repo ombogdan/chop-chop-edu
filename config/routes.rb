@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  devise_for :students
   get 'home/index'
 
   root 'home#index'
@@ -33,6 +33,9 @@ Rails.application.routes.draw do
 
 
   resources :themes, path: '/chop-chop-edu/themes'
+
+
+  resources :tests, path: '/chop-chop-edu/tests'
 
 
 end

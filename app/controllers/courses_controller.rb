@@ -22,7 +22,10 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @courses = Course.find(params[:id])
+    @course_name = Course.find(params[:id])
+    course = Course.find(params[:id])
+    @themes = course.subject_themes
+
   end
 
   def update
@@ -49,5 +52,6 @@ class CoursesController < ApplicationController
   def course_param
     params[:course].permit(:name)
   end
+
 
 end

@@ -1,20 +1,21 @@
 <h1 class="text-center">Предмети</h1>
-<a class="btn btn-primary mb-4" href="./courses/new" role="button">Додати предмет</a>
+<a class="btn btn-primary m-4" href="./courses/new" role="button">Додати предмет</a>
 <div class="container">
   <div class="row">
     <% @courses.each do |course| %>
-      <div class="col-sm-8">
+      <div class="col-sm-6">
       <p class="list-group-item"><%= course.name %></p>
       </div>
-      <div class="col-sm-1">
+      <div class="col-sm">
         <%= link_to 'Показати', course_path(course), :class => 'btn btn-success' %>
       </div>
-      <div class="col-sm-1">
+      <div class="col-sm">
       <%= link_to 'Редагувати', edit_course_path(course), :class => 'btn btn-warning' %>
       </div>
-      <div class="col-sm-1">
+      <div class="col-sm">
       <%= link_to 'Видалити', course_path(course), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
       </div>
+
     <% end %>
 </div>
 </div>
