@@ -15,8 +15,14 @@
   <body>
   <nav class="navbar navbar-dark bg-dark">
     <%= link_to 'Предмети', courses_path, :class => 'text-white' %>
-    <%= link_to 'Тest', tests_path, :class => 'text-white'  %>
+    <%= link_to 'Особистий кабінет', home_index_path, :class => 'text-white'  %>
   </nav>
+  <style>
+    body {
+      background-image:  url(qwer.jpg); /* Цвет фона и путь к файлу */
+    }
+  </style>
     <%= yield %>
+
   </body>
 </html>

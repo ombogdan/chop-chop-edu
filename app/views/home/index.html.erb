@@ -1,13 +1,10 @@
-<!doctype html>
-<html>
-<body>
 <ul>
   <% if user_signed_in? %>
     <li>
-      <%= button_to "Sign Out", destroy_user_session_path , :method => :delete %>
+      <%= button_to "Sign Out", destroy_user_session_path, :method => :delete %>
     </li>
     <li>
-      <%='User email: ' + current_user.email %>
+      <%= 'User email: ' + current_user.email %>
       <%# if @student.avatar.attached? %>
       <!--      <image src="<%#=(url_for(@student.avatar)) %>">-->
       <!--      "Bodya QA"-->
@@ -17,19 +14,23 @@
       <%= 'Name: ' + current_user.name %>
     </li>
     <li>
-      <%= 'Surname: ' + current_user.surname%>
+      <%= 'Surname: ' + current_user.surname %>
     </li>
     <li>
       <%= 'Groupname: ' + current_user.groupname %>
     </li>
-  <% else  %>
-    <li>
-      <%= link_to "Sign in", new_user_session_path %> Авторизація
-    </li>
-    <li>
-      <%= link_to "Sign UP", new_user_registration_path %> Регістрація
-    </li>
-  <%end %>
+  <% else %>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-9 conversion-text pt-5">
+          <%= link_to "Ввійти", new_user_session_path, :class => 'btn btn-outline-success btn-lg' %>
+        </div>
+        <div class="ml-auto col-2 text-right align-middle pt-5">
+          <%= link_to "Зареєструватися", new_user_registration_path, :class => 'btn btn-outline-info btn-lg' %>
+        </div>
+      </div>
+    </div>
+    </div>
+  <% end %>
 </ul>
-</body>
-</html>
+
