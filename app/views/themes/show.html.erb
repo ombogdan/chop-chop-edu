@@ -4,20 +4,21 @@
       <h1><%= @themes.theme_name %></h1>
     </div>
     <div class="col-sm mt-2">
-      <%= link_to 'Показати всі теми', themes_path, :class => 'btn btn-success' %>
+      <%= link_to 'Показати всі теми', :back, :class => 'btn btn-success' %>
     </div>
 
     <div class="col-sm mt-2">
       <%= link_to 'Редагувати тему', edit_theme_path(@themes), :class => 'btn btn-warning' %>
     </div>
   </div>
+
   <h1 class="p-4 text-center">Лекції</h1>
   <% @lectures.each do |lecture| %>
     <div class="container">
       <div class="row">
         <h2 class="col-sm-8"><%= lecture.theme_name %></h2>
         <div class="col-sm-3">
-          <%= link_to 'Змінити назву лекції', edit_lecture_path(lecture), :class => 'btn btn-warning' %>
+          <%= link_to 'Змінити лекцію', edit_lecture_path(lecture), :class => 'btn btn-warning' %>
         </div>
         <div class="col-sm-1">
           <%= link_to 'Видалити', lecture_path(lecture), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
@@ -33,7 +34,7 @@
       <div class="row">
         <h2 class="col-sm-8"><%= practice.theme_name %></h2>
         <div class="col-sm-3">
-          <%= link_to 'Змінити назву лекції', edit_practice_path(practice), :class => 'btn btn-warning' %>
+          <%= link_to 'Змінити практику', edit_practice_path(practice), :class => 'btn btn-warning' %>
         </div>
         <div class="col-sm-1">
           <%= link_to 'Видалити', practice_path(practice), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
@@ -49,7 +50,7 @@
       <div class="row">
         <h2 class="col-sm-8"><%= lab.theme_name %></h2>
         <div class="col-sm-3">
-          <%= link_to 'Змінити назву лекції', edit_lab_path(lab), :class => 'btn btn-warning' %>
+          <%= link_to 'Змінити лабораторну роботу', edit_lab_path(lab), :class => 'btn btn-warning' %>
         </div>
         <div class="col-sm-1">
           <%= link_to 'Видалити', lab_path(lab), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>

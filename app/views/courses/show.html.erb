@@ -1,32 +1,33 @@
+<h2 class="mt-5 text-center"><%= @course_name.name %></h2>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-      <h2 class="mt-5"><%= @course_name.name %></h2>
+  <div class="row text-center">
+    <div class="col-sm pt-3 mr-5">
+      <%= link_to 'Додати новий розділ', new_theme_path, :class => 'btn btn-primary mr-2' %>
     </div>
-    <div class="col-sm pt-5">
+    <div class="col-sm pt-3">
       <%= link_to 'Змінити назву предмету', edit_course_path(@course_name), :class => 'btn btn-warning' %>
     </div>
-    <div class="col-sm-1 pt-5">
+    <div class="col-sm pt-3">
       <%= link_to 'Видалити', course_path(@course_name), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container pt-4">
   <% @themes.each do |theme| %>
     <div class="row pt-4">
       <div class="col-sm-6">
         <h1><%= theme.theme_name %></h1>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm">
         <%= link_to 'Показати всі матеріали', theme_path(theme), method: :get, :class => 'btn btn-outline-success' %>
+      </div>
+      <div class="col-sm">
+        <%= link_to 'Змінити назву розділу', edit_theme_path(theme), :class => 'btn btn-outline-warning' %>
+      </div>
+      <div class="col-sm">
+        <%= link_to 'Видалити розділ', theme_path(theme), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-outline-danger' %>
       </div>
     </div>
   <% end %>
 </div>
-
-
-
-
-
-

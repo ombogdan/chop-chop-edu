@@ -3,21 +3,21 @@
 
     <div class="container">
       <div class="form-group">
-        <label for="exampleInputEmail1">Тема лабораторної роботи</label>
+        <label for="exampleInputEmail1">Тема:</label>
         <%= form.text_field :theme_name %>
         <small id="emailHelp" class="form-text text-muted">Введіть повну тему лабораторної роботи</small>
       </div>
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Мета</label>
+        <label for="exampleInputEmail1">Мета:</label>
         <%= form.text_field :goal %>
-        <small id="emailHelp" class="form-text text-muted pb-2">Введіть тему лабораторної роботи</small>
+        <small id="emailHelp" class="form-text text-muted pb-2">Мета</small>
       </div>
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Тема</label>
+        <label for="exampleInputEmail1">Розділ:</label>
         <%= form.select :subject_theme_id, options_for_select(@themes.collect { |theme| [theme.theme_name.titleize, theme.id] }, 1) %>
-        <small class="form-text text-muted pb-2">Виберіть тему</small>
+        <small class="form-text text-muted pb-2">Виберіть розділ</small>
       </div>
 
       <div class="form-group">
