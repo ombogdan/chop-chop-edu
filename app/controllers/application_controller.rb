@@ -40,6 +40,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_in, keys: [:position])
     devise_parameter_sanitizer.permit(:account_update, keys: [:position])
   end
-
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+  check_authorization
   protect_from_forgery with: :exception
 end

@@ -56,3 +56,6 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 
 gem 'prawn'
+
+#for routs
+gem "cancan"
