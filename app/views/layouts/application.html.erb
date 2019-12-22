@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ChopChopEdu</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>ChopChopEdu</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="courses.scss">
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="courses.scss">
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  <nav class="navbar navbar-dark bg-dark">
-    <%= link_to 'Предмети', courses_path, :class => 'text-white' %>
-    <%= link_to 'Особистий кабінет', home_index_path, :class => 'text-white'  %>
-  </nav>
-  <style>
-    body {
-      background-image:  url(qwer.jpg); /* Цвет фона и путь к файлу */
-    }
-  </style>
-    <%= yield %>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <%= link_to 'Предмети', courses_path, :class => 'text-white' %>
+  <%= link_to 'Особистий кабінет', home_index_path, :class => 'text-white' %>
 
-  </body>
+  <% if user_signed_in? %>
+    <%= button_to "Вийти", destroy_user_session_path, :method => :delete, :class => 'btn btn-success' %>
+    <% else %>
+    <%= link_to "Ввійти", new_user_session_path, :class => 'btn btn-success' %>
+    <%= link_to "Зареєструватися", new_user_registration_path, :class => 'btn btn-info' %>
+<% end %>
+</nav>
+<style>
+  body {
+    background-image: url(qwer.jpg); /* Цвет фона и путь к файлу */
+  }
+</style>
+<%= yield %>
+
+</body>
 </html>
