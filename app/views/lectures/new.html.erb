@@ -8,8 +8,9 @@
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">ID теми</label>
+      <label for="exampleInputEmail1">Тема</label>
       <%= form.select :subject_theme_id, options_for_select(@themes.collect { |theme| [theme.theme_name.titleize, theme.id] }, 1) %>
+      <small id="emailHelp" class="form-text text-muted">Виберіть тему</small>
     </div>
 
     <div class="form-group">

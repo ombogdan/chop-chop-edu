@@ -3,7 +3,7 @@
 
     <div class="container">
       <div class="form-group">
-        <label for="exampleInputEmail1">Тема лекції</label>
+        <label for="exampleInputEmail1">Тема лабораторної роботи</label>
         <%= form.text_field :theme_name %>
         <small id="emailHelp" class="form-text text-muted">Введіть повну тему лабораторної роботи</small>
       </div>
@@ -11,12 +11,13 @@
       <div class="form-group">
         <label for="exampleInputEmail1">Мета</label>
         <%= form.text_field :goal %>
-        <small id="emailHelp" class="form-text text-muted pb-2">Введіть ІD тесту</small>
+        <small id="emailHelp" class="form-text text-muted pb-2">Введіть тему лабораторної роботи</small>
       </div>
 
       <div class="form-group">
-        <label for="exampleInputEmail1">ID теми</label>
+        <label for="exampleInputEmail1">Тема</label>
         <%= form.select :subject_theme_id, options_for_select(@themes.collect { |theme| [theme.theme_name.titleize, theme.id] }, 1) %>
+        <small class="form-text text-muted pb-2">Виберіть тему</small>
       </div>
 
       <div class="form-group">
