@@ -6,7 +6,7 @@
   <div class="radio">
     <%= f.label :position, 'Position', :class => 'position-button' %><br />
     <div class="input-form">
-      <%#= f.select(:position, User.positions.keys.map {|position| [position.titleize,position]}) %>
+      <%= f.select(:position, User.positions.keys.map {|position| [position.titleize,position]}) %>
     </div>
   </div>
 
