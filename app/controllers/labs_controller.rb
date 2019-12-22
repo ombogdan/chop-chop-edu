@@ -7,7 +7,7 @@ class LabsController < ApplicationController
   def create
     @lab = Lab.new(lab_params)
     if @lab.save
-      redirect_to labs_path
+      redirect_to courses_path
     else
       render :new
     end
@@ -19,6 +19,7 @@ class LabsController < ApplicationController
 
   def edit
     @lab = Lab.find(params[:id])
+    @themes = SubjectTheme.all
   end
 
   def show
@@ -29,7 +30,7 @@ class LabsController < ApplicationController
     @labs = Lab.find(params[:id])
 
     if @labs.update(lab_params)
-      redirect_to @labs
+      redirect_to courses_path
     else
       render 'edit'
     end

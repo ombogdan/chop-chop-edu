@@ -7,7 +7,7 @@ class LecturesController < ApplicationController
   def create
     @lecture = Lecture.new(lecture_params)
     if @lecture.save
-      redirect_to lectures_path
+      redirect_to courses_path
     else
       render :new
     end
@@ -19,6 +19,7 @@ class LecturesController < ApplicationController
 
   def edit
     @lecture = Lecture.find(params[:id])
+    @themes = SubjectTheme.all
   end
 
   def show
@@ -29,7 +30,7 @@ class LecturesController < ApplicationController
     @lecture = Lecture.find(params[:id])
 
     if @lecture.update(lecture_params)
-      redirect_to @lecture
+      redirect_to courses_path
     else
       render 'edit'
     end
@@ -50,8 +51,4 @@ class LecturesController < ApplicationController
     params[:lecture].permit(:theme_name, :subject_theme_id, :text, :id_test)
   end
 
-  def find_lecture
-    @lecture = Lecture.find(params[:id])
-
-  end
 end

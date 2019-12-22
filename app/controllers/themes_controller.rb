@@ -7,7 +7,7 @@ class ThemesController < ApplicationController
   def create
     @theme = SubjectTheme.new(theme_params)
     if @theme.save
-      redirect_to themes_path
+      redirect_to courses_path
     else
       render :new
     end
@@ -33,7 +33,7 @@ class ThemesController < ApplicationController
     @theme = SubjectTheme.find(params[:id])
 
     if @theme.update(theme_params)
-      redirect_to themes_path
+      redirect_to courses_path
     else
       render 'edit'
     end
