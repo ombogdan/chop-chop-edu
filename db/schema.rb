@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_171100) do
+ActiveRecord::Schema.define(version: 2019_12_22_113424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(version: 2019_12_19_171100) do
 
   create_table "lectures", force: :cascade do |t|
     t.string "theme_name", null: false
-    t.integer "subject_theme_id"
     t.text "text", null: false
     t.integer "test_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "subject_theme_id"
   end
 
   create_table "practices", force: :cascade do |t|
@@ -46,9 +46,6 @@ ActiveRecord::Schema.define(version: 2019_12_19_171100) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
-# Could not dump table "students" because of following StandardError
-#   Unknown type 'int2vector' for column 'phone'
 
   create_table "subject_themes", force: :cascade do |t|
     t.string "theme_name"
@@ -64,11 +61,23 @@ ActiveRecord::Schema.define(version: 2019_12_19_171100) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "name"
-    t.string "hashed_password"
-    t.string "salt"
+    t.string "surname"
+    t.string "fathername"
+    t.string "phone"
+    t.string "groupname"
+    t.string "student"
+    t.string "teacher"
+    t.string "position"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

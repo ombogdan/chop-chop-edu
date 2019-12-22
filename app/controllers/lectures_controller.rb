@@ -47,7 +47,7 @@ class LecturesController < ApplicationController
   private
 
   def lecture_params
-    params[:lecture].permit(:theme_name, :id_subject_theme, :text, :id_test)
+    params[:lecture].permit(:theme_name, :subject_theme_id, :text, :id_test)
   end
 
   def find_lecture

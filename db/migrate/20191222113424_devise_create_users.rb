@@ -1,12 +1,19 @@
 # frozen_string_literal: true
 
-class DeviseCreateStudents < ActiveRecord::Migration[6.0]
+class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
-    create_table :students do |t|
+    create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-
+      t.string :name
+      t.string :surname
+      t.string :fathername
+      t.string :phone
+      t.string :groupname
+      t.string :student
+      t.string :teacher
+      t.string :position
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
@@ -36,9 +43,9 @@ class DeviseCreateStudents < ActiveRecord::Migration[6.0]
       t.timestamps null: false
     end
 
-    add_index :students, :email,                unique: true
-    add_index :students, :reset_password_token, unique: true
-    # add_index :students, :confirmation_token,   unique: true
-    # add_index :students, :unlock_token,         unique: true
+    add_index :users, :email,                unique: true
+    add_index :users, :reset_password_token, unique: true
+    # add_index :users, :confirmation_token,   unique: true
+    # add_index :users, :unlock_token,         unique: true
   end
 end

@@ -2,23 +2,32 @@
 <html>
 <body>
 <ul>
-  <% if student_signed_in? %>
+  <% if user_signed_in? %>
     <li>
-      <%= button_to "Sign Out", destroy_student_session_path , :method => :delete %>
+      <%= button_to "Sign Out", destroy_user_session_path , :method => :delete %>
     </li>
     <li>
-      <%= current_student.email %>
+      <%='User email: ' + current_user.email %>
       <%# if @student.avatar.attached? %>
       <!--      <image src="<%#=(url_for(@student.avatar)) %>">-->
       <!--      "Bodya QA"-->
       <%#end %>
     </li>
-  <% else  %>
     <li>
-      <%= link_to "sign in", new_student_session_path %> Авторизація
+      <%= 'Name: ' + current_user.name %>
     </li>
     <li>
-      <%= link_to "sign UP", new_student_registration_path %> Регістрація
+      <%= 'Surname: ' + current_user.surname%>
+    </li>
+    <li>
+      <%= 'Groupname: ' + current_user.groupname %>
+    </li>
+  <% else  %>
+    <li>
+      <%= link_to "Sign in", new_user_session_path %> Авторизація
+    </li>
+    <li>
+      <%= link_to "Sign UP", new_user_registration_path %> Регістрація
     </li>
   <%end %>
 </ul>
