@@ -1,0 +1,20 @@
+<div class="container mt-3 m-4">
+  <h1 class="text-center mb-3">Предмети</h1>
+  <div class="row mb-4">
+    <a class="btn btn-outline-success col-sm mr-2 " href="./courses/new" role="button">Додати предмет</a>
+    <a class="btn btn-outline-secondary col-sm mr-2" href="./lectures/new/" role="button">Додати нову лекцію</a>
+    <a class="btn btn-outline-info col-sm mr-2" href="./labs/new/" role="button">Додати нову лабораторну</a>
+    <a class="btn btn-outline-dark col-sm" href="./practice/new" role="button">Додати нову практику</a>
+</div>
+<div class="container">
+  <div class="row">
+    <% @courses.each do |course| %>
+      <div class="col-sm-12">
+      <p class="list-group-item">
+        <a href="<%= course_path(course)%>" class="text-dark"><%= course.name %></a>
+      </p>
+      </div>
+    <% end %>
+</div>
+</div>
+</div>

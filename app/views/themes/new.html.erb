@@ -1,0 +1,17 @@
+<h1 class="text-center mb-4 pt-2">Створити нову тему</h1>
+<%=  form_for @theme, url: themes_path do |form|  %>
+  <div class="container">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Назва теми</label>
+      <%= form.text_field :theme_name %>
+      <small id="emailHelp" class="form-text text-muted">Введіть повну назву теми</small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">ID теми</label>
+      <%= form.select :course_id, options_for_select(@courses.collect { |course| [course.name.titleize, course.id] }, 1) %>
+    </div>
+
+    <%= form.submit :class => 'btn btn-success', :value => 'Додати тему' %>
+  </div>
+<% end %>

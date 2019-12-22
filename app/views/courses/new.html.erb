@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="text-center">Створити новий предмет</h1>
+  <%= form_for @courses, url: courses_path do |form| %>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Назва предмету</label>
+      <%= form.text_field :name, :class => 'form-control' %>
+      <small id="emailHelp" class="form-text text-muted">Введіть повну назву предмету</small>
+    </div>
+    <%= form.submit :class => 'btn btn-success', :value => 'Додати предмет' %>
+
+<% end %>
+</div>

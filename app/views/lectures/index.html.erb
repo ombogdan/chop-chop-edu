@@ -1,0 +1,28 @@
+<h1 class="text-center">Лекції</h1>
+<a class="btn btn-primary row m-3" href="./lectures/new/" role="button">Додати нову лекцію</a>
+
+<% @lectures.each do |lecture| %>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-7">
+        <h2 class=""><%= lecture.theme_name %></h2>
+      </div>
+
+        <div class="col-sm">
+          <%= link_to 'Показати', lecture_path(lecture), :class => 'btn btn-success' %>
+        </div>
+
+        <div class="col-sm-2">
+          <%= link_to 'Редагувати', edit_lecture_path(lecture), :class => 'btn btn-warning' %>
+        </div>
+
+        <div class="col-sm-1">
+          <%= link_to 'Delete', lecture_path(lecture), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
+        </div>
+      </div>
+  </div>
+  <%= lecture.subject_theme_id %>
+  <p class="ml-5 mr-5 mb-4" rows ='5' class ='form-control'><%= lecture.text %></p>
+  <%= lecture.test_id %>
+<% end %>

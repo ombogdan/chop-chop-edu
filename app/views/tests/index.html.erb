@@ -1,0 +1,17 @@
+TEST
+<a class="btn btn-primary m-4" href="./tests/new" role="button">Додати тест</a>
+
+<% @tests.each do |test| %>
+  <%= test.question %>
+  <%= test.answers %>
+  <%= test.true_answer %>
+
+  <%= link_to 'Редагувати', edit_test_path(test), :class => 'btn btn-warning' %>
+  <%= link_to 'Delete', tests_path(test), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
+
+
+<% end %>
+
+<script defer>
+
+</script>

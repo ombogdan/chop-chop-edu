@@ -1,0 +1,31 @@
+<h1 class="text-center mb-4 pt-2">Лабораторні роботи</h1>
+<a class="btn btn-primary row ml-5" href="./labs/new/" role="button">Додати нову лекцію</a>
+<% @labs.each do |lab| %>
+  <div class="container">
+    <div class="row">
+      <%= lab.subject_theme_id %>
+      <div class="col-sm-7">
+        <h2><%= lab.theme_name %></h2>
+      </div>
+
+      <div class="col-sm-7">
+        <h3><%= lab.goal %></h3>
+      </div>
+
+      <div class="col-sm pb-3">
+        <%= link_to 'Показати', lab_path(lab), :class => 'btn btn-success' %>
+      </div>
+
+      <div class="col-sm-2">
+        <%= link_to 'Редагувати', edit_lab_path(lab), :class => 'btn btn-warning' %>
+      </div>
+
+      <div class="col-sm-1">
+        <%= link_to 'Delete', lab_path(lab), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
+      </div>
+
+      <%= lab.text %>
+
+    </div>
+  </div>
+<% end %>

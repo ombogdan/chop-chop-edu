@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1><%= @themes.theme_name %></h1>
+    </div>
+    <div class="col-sm mt-2">
+      <%= link_to 'Показати всі теми', :back, :class => 'btn btn-success' %>
+    </div>
+
+    <div class="col-sm mt-2">
+      <%= link_to 'Редагувати тему', edit_theme_path(@themes), :class => 'btn btn-warning' %>
+    </div>
+  </div>
+
+  <h1 class="p-4 text-center">Лекції</h1>
+  <% @lectures.each do |lecture| %>
+    <div class="container">
+      <div class="row">
+        <h2 class="col-sm-8"><%= lecture.theme_name %></h2>
+        <div class="col-sm-3">
+          <%= link_to 'Змінити лекцію', edit_lecture_path(lecture), :class => 'btn btn-warning' %>
+        </div>
+        <div class="col-sm-1">
+          <%= link_to 'Видалити', lecture_path(lecture), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
+        </div>
+      </div>
+    </div>
+    <p class="ml-5 mr-5 mb-4" class='form-control'><%= lecture.text %></p>
+  <% end %>
+
+  <h1  class="p-4 text-center">Практики</h1>
+  <% @practices.each do |practice| %>
+    <div class="container">
+      <div class="row">
+        <h2 class="col-sm-8"><%= practice.theme_name %></h2>
+        <div class="col-sm-3">
+          <%= link_to 'Змінити практику', edit_practice_path(practice), :class => 'btn btn-warning' %>
+        </div>
+        <div class="col-sm-1">
+          <%= link_to 'Видалити', practice_path(practice), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
+        </div>
+      </div>
+    </div>
+    <p class="ml-5 mr-5 mb-4" class='form-control'><%= practice.text %></p>
+  <% end %>
+
+  <h1  class="p-4 text-center">Лабораторні</h1>
+  <% @labs.each do |lab| %>
+    <div class="container">
+      <div class="row">
+        <h2 class="col-sm-8"><%= lab.theme_name %></h2>
+        <div class="col-sm-3">
+          <%= link_to 'Змінити лабораторну роботу', edit_lab_path(lab), :class => 'btn btn-warning' %>
+        </div>
+        <div class="col-sm-1">
+          <%= link_to 'Видалити', lab_path(lab), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
+        </div>
+      </div>
+    </div>
+    <h2><%= lab.goal %></h2>
+    <p class="ml-5 mr-5 mb-4" class='form-control'><%= lab.text %></p>
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <%= @labs.subject_theme_id %>
+    <div class="col-sm-7">
+      <h2><%= @labs.theme_name %></h2>
+    </div>
+
+    <div class="col-sm-7">
+      <h3><%= @labs.goal %></h3>
+    </div>
+
+    <div class="col-sm pb-3">
+      <%= link_to 'Показати всі лекції', labs_path, :class => 'btn btn-success' %>
+    </div>
+
+    <div class="col-sm-2">
+      <%= link_to 'Редагувати', edit_lab_path(@labs), :class => 'btn btn-warning' %>
+    </div>
+    <%= @labs.text %>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container m-4">
+  <% if user_signed_in? %>
+    <div class="container ml-5">
+      <p><%= 'Email: ' + current_user.email %></p>
+      <%# if @student.avatar.attached? %>
+      <!--      <image src="<%#=(url_for(@student.avatar)) %>">-->
+      <!--      "Bodya QA"-->
+      <%#end %>
+      <p><%= 'Імя: ' + current_user.name %></p>
+      <p><%= 'Прізвище: ' + current_user.surname %></p>
+      <p><%= 'Група: ' + current_user.groupname %></p>
+    </div>
+  <% else %>
+<!--    <div class="container">-->
+<!--      <div class="row align-items-center">-->
+<!--        <div class="col-9 conversion-text pt-5">-->
+          <%#= link_to "Ввійти", new_user_session_path, :class => 'btn btn-outline-success btn-lg' %>
+<!--        </div>-->
+<!--        <div class="ml-auto col-2 text-right align-middle pt-5">-->
+          <%#= link_to "Зареєструватися", new_user_registration_path, :class => 'btn btn-outline-info btn-lg' %>
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+  <% end %>
+</div>
