@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1><%= @themes.theme_name %></h1>
+    </div>
+    <div class="col-sm mt-2">
+      <%= link_to 'Показати всі лекції', themes_path, :class => 'btn btn-success' %>
+    </div>
+
+    <div class="col-sm mt-2">
+      <%= link_to 'Редагувати', edit_theme_path(@themes), :class => 'btn btn-warning' %>
+    </div>
+  </div>
+  <h1>Лекції</h1>
+  <% @lectures.each do |lecture| %>
+    <h2 class=""><%= lecture.theme_name %></h2>
+    <p class="ml-5 mr-5 mb-4" class='form-control'><%= lecture.text %></p>
+  <% end %>
+  <h1>Практики</h1>
+
+  <% @practices.each do |practice| %>
+    <h2 class=""><%= practice.theme_name %></h2>
+    <p class="ml-5 mr-5 mb-4" class='form-control'><%= practice.text %></p>
+  <% end %>
+  <h1>Лабораторні</h1>
+
+  <% @labs.each do |lab| %>
+    <h2><%= lab.theme_name %></h2>
+    <h2><%= lab.goal %></h2>
+    <p class="ml-5 mr-5 mb-4" class='form-control'><%= lab.text %></p>
+  <% end %>
+</div>

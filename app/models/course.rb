@@ -1,3 +1,4 @@
 class Course < ApplicationRecord
-  has_many :theme
+  has_many :subject_themes
+
 end

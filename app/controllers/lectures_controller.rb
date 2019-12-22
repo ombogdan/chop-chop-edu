@@ -1,6 +1,7 @@
 class LecturesController < ApplicationController
   def new
     @lecture = Lecture.new
+    @themes = SubjectTheme.all
   end
 
   def create

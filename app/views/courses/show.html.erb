@@ -1,6 +1,32 @@
-  <h2 class="text-center mt-5"><%= @courses.name %></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2 class="text-center mt-5"><%= @course_name.name %></h2>
+    </div>
 
-<div class="text-center mt-5">
-  <%= link_to 'Show All', courses_path, :class => 'btn btn-success'  %>
-  <%= link_to 'Edit', edit_course_path(@courses), :class => 'btn btn-warning'%>
+    <div class="col-sm-3 pt-5">
+      <%= link_to 'Змінити назву предмету', edit_course_path(@course_name), :class => 'btn btn-warning' %>
+    </div>
+    <div class="col-sm-1 pt-5">
+      <%= link_to 'Видалити', course_path(@course_name), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
+    </div>
+  </div>
 </div>
+
+<% @themes.each do |theme| %>
+  <div class="row pt-4">
+    <div class="col-sm-4">
+      <h1><%= theme.theme_name %></h1>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to 'Показати всі матеріали', theme_path(theme), method: :get, :class => 'btn btn-outline-success' %>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+
+

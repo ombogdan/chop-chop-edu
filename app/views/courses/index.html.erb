@@ -1,19 +1,20 @@
 <h1 class="text-center">Предмети</h1>
-<a class="btn btn-primary mb-4" href="./courses/new" role="button">Додати предмет</a>
+<div class="container mt-3 m-4">
+  <div class="row">
+    <a class="btn btn-outline-success col-sm mr-2 " href="./courses/new" role="button">Додати предмет</a>
+    <a class="btn btn-outline-primary col-sm mr-2" href="./themes/new/" role="button">Додати нову тему</a>
+    <a class="btn btn-outline-secondary col-sm mr-2" href="./lectures/new/" role="button">Додати нову лекцію</a>
+    <a class="btn btn-outline-info col-sm mr-2" href="./labs/new/" role="button">Додати нову лабораторну</a>
+    <a class="btn btn-outline-dark col-sm ml-2" href="./practice/new" role="button">Додати нову практику</a>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <% @courses.each do |course| %>
-      <div class="col-sm-8">
-      <p class="list-group-item"><%= course.name %></p>
-      </div>
-      <div class="col-sm-1">
-        <%= link_to 'Показати', course_path(course), :class => 'btn btn-success' %>
-      </div>
-      <div class="col-sm-1">
-      <%= link_to 'Редагувати', edit_course_path(course), :class => 'btn btn-warning' %>
-      </div>
-      <div class="col-sm-1">
-      <%= link_to 'Видалити', course_path(course), method: :delete, data: {confirm: "Delete?"}, :class => 'btn btn-danger' %>
+      <div class="col-sm-12">
+      <p class="list-group-item">
+        <a href="<%= course_path(course)%>" class="text-dark"><%= course.name %></a>
+      </p>
       </div>
     <% end %>
 </div>

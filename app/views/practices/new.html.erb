@@ -5,7 +5,7 @@
   <div class="container">
     <div class="form-group">
       <label for="exampleInputEmail1">Тема лекції</label>
-      <%= form.text_field :theme_name %>
+      <%= form.text_field :theme_name, :maxlength => '35' %>
       <small id="emailHelp" class="form-text text-muted">Введіть повну тему лабораторної роботи</small>
     </div>
 
