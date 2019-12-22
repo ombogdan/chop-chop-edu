@@ -7,11 +7,20 @@
       <%= button_to "Sign Out", destroy_user_session_path , :method => :delete %>
     </li>
     <li>
-      <%= current_user.email %>
+      <%='User email: ' + current_user.email %>
       <%# if @student.avatar.attached? %>
       <!--      <image src="<%#=(url_for(@student.avatar)) %>">-->
       <!--      "Bodya QA"-->
       <%#end %>
+    </li>
+    <li>
+      <%= 'Name: ' + current_user.name %>
+    </li>
+    <li>
+      <%= 'Surname: ' + current_user.surname%>
+    </li>
+    <li>
+      <%= 'Groupname: ' + current_user.groupname %>
     </li>
   <% else  %>
     <li>
