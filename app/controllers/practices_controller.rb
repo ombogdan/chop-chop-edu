@@ -1,6 +1,7 @@
 class PracticesController < ApplicationController
     def new
       @practice = Practice.new
+      @themes = SubjectTheme.all
     end
 
     def create

@@ -2,15 +2,14 @@
 <%=  form_for @theme, url: themes_path do |form|  %>
   <div class="container">
     <div class="form-group">
-      <label for="exampleInputEmail1">Тема лекції</label>
+      <label for="exampleInputEmail1">Назва теми</label>
       <%= form.text_field :theme_name %>
-      <small id="emailHelp" class="form-text text-muted">Введіть повну тему лабораторної роботи</small>
+      <small id="emailHelp" class="form-text text-muted">Введіть повну назву теми</small>
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">ID предмету</label>
-      <%= form.number_field :course_id %>
-      <small id="emailHelp" class="form-text text-muted">Введіть ІD предмету</small>
+      <label for="exampleInputEmail1">ID теми</label>
+      <%= form.select :course_id, options_for_select(@courses.collect { |course| [course.name.titleize, course.id] }, 1) %>
     </div>
 
     <%= form.submit :class => 'btn btn-success', :value => 'Додати тему' %>
